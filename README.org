@@ -1,0 +1,151 @@
+#+TITLE: Readme
+
+* Why need this?
+When I buy a new computer, just follow these commands to make it looks like my
+older computer.
+
+* How it looks?
+
+#+attr_html: :width 800px
+[[./images/fish-shell.png]]
+
+#+attr_html: :width 800px
+[[./images/emacs.png]]
+
+* How to make it happen?
+
+** The Doorway whence issued all Secret Essences
+
+[[https://brew.sh/][homebrew]]
+
+#+begin_src shell
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+#+end_src
+
+** Xcode Command Line Tools
+
+Install common command to =/Library/Developer/CommandLineTools/=
+
+#+begin_src shell
+
+xcode-select --install
+
+#+end_src
+
+** iTerm 2
+
+Install iTerm2 through brew:
+
+#+begin_src shell
+
+brew install --cask iterm2
+
+#+end_src
+
+Beautify iTerm2:
+
+1. Appearance -> Theme -> Select Minimal Theme
+
+2. iTerm2 -> Preferences -> Profiles -> Session -> Check the "Status Bar Enabled" checkbox
+
+3. Install iTerm [[https://github.com/sindresorhus/iterm2-snazzy][colors]]
+
+
+** fish shell
+
+Install [[https://fishshell.com/][fish]] shell -- [[https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal-console-shell-and-command-line/506628#506628][Read this]]
+
+#+begin_src shell
+
+  brew install fish
+
+  echo /usr/local/bin/fish | sudo tee -a /etc/shells
+
+  chsh -s /usr/local/bin/fish
+
+#+end_src
+
+
+Install [[https://github.com/jorgebucaran/fisher#using-your-fish_plugins-file][fisher]] -- A plugin manager for Fish
+
+#+begin_src shell
+
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+#+end_src
+
+
+Beautify fish: Prompts
+
+#+begin_src shell
+
+fisher install pure-fish/pure
+
+fisher install edouard-lopez/ayu-theme.fish
+
+#+end_src
+
+
+Plugins:
+
+#+begin_src shell
+
+fisher install gazorby/fish-abbreviation-tips
+
+fisher install joseluisq/gitnow
+
+fisher install laughedelic/brew-completions
+
+fisher install patrickf1/colored_man_pages.fish
+
+fisher install jethrokuan/z
+
+fisher install PatrickF1/fzf.fish
+
+brew install fzf fd bat
+
+#+end_src
+
+
+Config fish:
+
+#+begin_src shell
+
+fish_config
+
+#+end_src
+
+
+Finnal:
+
+-  Run fish_vi_key_bindings to start vi mode
+
+-  Run fish_default_key_bindings to go back to default mode
+
+
+** Emacs
+
+[[https://github.com/lijigang/config-orgmode-within-doom][Install emacs config]]
+
+Install dependencies
+#+begin_src shell
+
+# Doom required dependencies
+brew install ripgrep
+
+# Optional dependencies
+brew install coreutils
+
+#+end_src
+
+** Input method: Rime
+
+Install Rime:
+
+#+begin_src shell
+
+brew install --cask squirrel
+
+#+end_src
