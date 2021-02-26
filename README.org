@@ -24,6 +24,8 @@ older computer.
 
 #+end_src
 
+You should also check [[https://www.lijigang.com/blog/2020/11/09/config-faq/][this]] out.
+
 ** Xcode Command Line Tools
 
 Install common command to =/Library/Developer/CommandLineTools/=
