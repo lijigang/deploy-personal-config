@@ -53,7 +53,7 @@ Beautify iTerm2:
 3. Install iTerm [[https://github.com/sindresorhus/iterm2-snazzy][colors]]
 
 
-** fish shell
+** fish shell(Option 1)
 
 Install [[https://fishshell.com/][fish]] shell -- [[https://askubuntu.com/questions/506510/what-is-the-difference-between-terminal-console-shell-and-command-line/506628#506628][Read this]]
 
@@ -124,7 +124,45 @@ Finnal:
 
 -  Run fish_default_key_bindings to go back to default mode
 
+** nushell (Option 2)
+Install [[https://github.com/nushell/][nushell]] through brew
+#+begin_src shell
 
+brew install nushell
+
+#+end_src
+
+Use it as login shell:
+#+begin_src shell
+sudo vim /etc/shells
+
+# add /usr/local/bin/nu
+
+chsh -s /usr/local/bin/nu
+
+nu
+
+#+end_src
+
+Use zsh path to utility other commands:
+#+begin_src shell
+config set path $nu.path
+
+config set env $nu.env
+#+end_src
+
+Beautify Nushell: Install starship prompt
+#+begin_src shell
+
+brew install starship
+
+#+end_src
+#+begin_src shell
+# in Nushell
+
+config set prompt "starship prompt"
+#+end_src
+Then restart your nushell.
 ** Emacs
 
 [[https://github.com/lijigang/config-orgmode-within-doom][Install emacs config]]
